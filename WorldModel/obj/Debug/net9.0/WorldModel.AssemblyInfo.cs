@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("WorldModel")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+29f48816cc68fd31986f214bf5a26900a07f2ac3")]
 [assembly: System.Reflection.AssemblyProductAttribute("WorldModel")]
 [assembly: System.Reflection.AssemblyTitleAttribute("WorldModel")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

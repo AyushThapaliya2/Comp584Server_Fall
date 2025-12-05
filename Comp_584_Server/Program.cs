@@ -3,6 +3,7 @@ using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.IdentityModel.Tokens;
 using Microsoft.OpenApi.Models;
+using Comp_584_Server;
 using WorldModel;
 
 WebApplicationBuilder builder = WebApplication.CreateBuilder(args);

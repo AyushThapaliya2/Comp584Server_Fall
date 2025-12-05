@@ -40,6 +40,9 @@ public partial class WeatherContext : IdentityDbContext<WorldModelUser>
                 .HasConstraintName("FK_cities_countries");
         });
 
+        // Ensure Identity tables are configured with proper keys.
+        base.OnModelCreating(modelBuilder);
+
         modelBuilder.Entity<Country>(entity =>
         {
             entity.HasKey(e => e.Id).HasName("PK_country");

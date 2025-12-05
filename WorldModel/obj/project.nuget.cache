@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "k5vkznM+Fh0=",
+  "dgSpecHash": "eMrm3hzICqM=",
   "success": true,
-  "projectFilePath": "/Users/ayushthapaliya/Desktop/Comp584_Server /WorldModel/WorldModel.csproj",
+  "projectFilePath": "/Users/ayushthapaliya/Desktop/Comp584Server_Fall/WorldModel/WorldModel.csproj",
   "expectedPackageFiles": [
     "/Users/ayushthapaliya/.nuget/packages/azure.core/1.38.0/azure.core.1.38.0.nupkg.sha512",
     "/Users/ayushthapaliya/.nuget/packages/azure.identity/1.11.4/azure.identity.1.11.4.nupkg.sha512",
@@ -94,15 +94,5 @@
     "/Users/ayushthapaliya/.nuget/packages/system.threading.tasks.extensions/4.5.4/system.threading.tasks.extensions.4.5.4.nupkg.sha512",
     "/Users/ayushthapaliya/.nuget/packages/system.windows.extensions/6.0.0/system.windows.extensions.6.0.0.nupkg.sha512"
   ],
-  "logs": [
-    {
-      "code": "NU1900",
-      "level": "Warning",
-      "message": "Error occurred while getting package vulnerability data: Unable to load the service index for source https://api.nuget.org/v3/index.json.",
-      "projectPath": "/Users/ayushthapaliya/Desktop/Comp584_Server /WorldModel/WorldModel.csproj",
-      "warningLevel": 1,
-      "filePath": "/Users/ayushthapaliya/Desktop/Comp584_Server /WorldModel/WorldModel.csproj",
-      "targetGraphs": []
-    }
-  ]
+  "logs": []
 }
