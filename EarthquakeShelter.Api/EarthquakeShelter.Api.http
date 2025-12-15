@@ -1,0 +1,6 @@
+@EarthquakeShelter_Api_HostAddress = http://localhost:5145
+
+GET {{EarthquakeShelter_Api_HostAddress}}/api/earthquakes/alerts
+Accept: application/json
+
+###

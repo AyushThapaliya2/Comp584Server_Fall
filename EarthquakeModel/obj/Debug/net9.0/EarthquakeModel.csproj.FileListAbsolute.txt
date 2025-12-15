@@ -1,0 +1,17 @@
+/Users/ayushthapaliya/Desktop/Comp584Server_Fall/EarthquakeModel/bin/Debug/net9.0/appsettings.Development.json
+/Users/ayushthapaliya/Desktop/Comp584Server_Fall/EarthquakeModel/bin/Debug/net9.0/appsettings.json
+/Users/ayushthapaliya/Desktop/Comp584Server_Fall/EarthquakeModel/bin/Debug/net9.0/EarthquakeModel.deps.json
+/Users/ayushthapaliya/Desktop/Comp584Server_Fall/EarthquakeModel/bin/Debug/net9.0/EarthquakeModel.runtimeconfig.json
+/Users/ayushthapaliya/Desktop/Comp584Server_Fall/EarthquakeModel/bin/Debug/net9.0/EarthquakeModel.dll
+/Users/ayushthapaliya/Desktop/Comp584Server_Fall/EarthquakeModel/bin/Debug/net9.0/EarthquakeModel.pdb
+/Users/ayushthapaliya/Desktop/Comp584Server_Fall/EarthquakeModel/obj/Debug/net9.0/EarthquakeModel.csproj.AssemblyReference.cache
+/Users/ayushthapaliya/Desktop/Comp584Server_Fall/EarthquakeModel/obj/Debug/net9.0/EarthquakeModel.GeneratedMSBuildEditorConfig.editorconfig
+/Users/ayushthapaliya/Desktop/Comp584Server_Fall/EarthquakeModel/obj/Debug/net9.0/EarthquakeModel.AssemblyInfoInputs.cache
+/Users/ayushthapaliya/Desktop/Comp584Server_Fall/EarthquakeModel/obj/Debug/net9.0/EarthquakeModel.AssemblyInfo.cs
+/Users/ayushthapaliya/Desktop/Comp584Server_Fall/EarthquakeModel/obj/Debug/net9.0/EarthquakeModel.csproj.CoreCompileInputs.cache
+/Users/ayushthapaliya/Desktop/Comp584Server_Fall/EarthquakeModel/obj/Debug/net9.0/EarthquakeModel.sourcelink.json
+/Users/ayushthapaliya/Desktop/Comp584Server_Fall/EarthquakeModel/obj/Debug/net9.0/EarthquakeModel.dll
+/Users/ayushthapaliya/Desktop/Comp584Server_Fall/EarthquakeModel/obj/Debug/net9.0/refint/EarthquakeModel.dll
+/Users/ayushthapaliya/Desktop/Comp584Server_Fall/EarthquakeModel/obj/Debug/net9.0/EarthquakeModel.pdb
+/Users/ayushthapaliya/Desktop/Comp584Server_Fall/EarthquakeModel/obj/Debug/net9.0/EarthquakeModel.genruntimeconfig.cache
+/Users/ayushthapaliya/Desktop/Comp584Server_Fall/EarthquakeModel/obj/Debug/net9.0/ref/EarthquakeModel.dll
