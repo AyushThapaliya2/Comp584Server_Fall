@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("EarthquakeShelter.Api")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+0e01fef2fac184f165a53564bedaa1b6d1578f01")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+861e5469a1628de3bc92e3f687b3706d551eb43f")]
 [assembly: System.Reflection.AssemblyProductAttribute("EarthquakeShelter.Api")]
 [assembly: System.Reflection.AssemblyTitleAttribute("EarthquakeShelter.Api")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
