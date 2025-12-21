@@ -1,122 +1,153 @@
 using Microsoft.AspNetCore.Authentication.JwtBearer;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Identity;
+using Microsoft.AspNetCore.Mvc.Authorization;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.IdentityModel.Tokens;
 using Microsoft.OpenApi.Models;
 using EarthquakeShelter.Api;
 using EarthquakeModel;
-using Microsoft.AspNetCore.Authorization;
-using Microsoft.AspNetCore.Mvc.Authorization;
 
-WebApplicationBuilder builder = WebApplication.CreateBuilder(args);
+var builder = WebApplication.CreateBuilder(args);
 
-// Add services to the container.
+//
+// ======================= SERVICES =======================
+//
 
+// Controllers + global auth policy
 builder.Services.AddControllers(options =>
 {
-    AuthorizationPolicy policy = new AuthorizationPolicyBuilder()
+    var policy = new AuthorizationPolicyBuilder()
         .RequireAuthenticatedUser()
         .Build();
+
     options.Filters.Add(new AuthorizeFilter(policy));
 });
+
+// Swagger
 builder.Services.AddEndpointsApiExplorer();
-builder.Services.AddSwaggerGen(c => {
-    c.SwaggerDoc("v1", new() {
-        Contact = new() {
-            Email = "ayush.thapaliya.36@my.csun.edu",
-            Name = "Ayush Thapaliya",
-            Url = new("https://canvas.csun.edu/courses/128137")
-        },
-        Description = "API for surfacing Los Angeles earthquake activity and matching nearby emergency shelters.",
+builder.Services.AddSwaggerGen(c =>
+{
+    c.SwaggerDoc("v1", new()
+    {
         Title = "Earthquake Shelter API",
-        Version = "V1"
+        Version = "v1",
+        Description = "API for surfacing Los Angeles earthquake activity and matching nearby emergency shelters.",
+        Contact = new OpenApiContact
+        {
+            Name = "Ayush Thapaliya",
+            Email = "ayush.thapaliya.36@my.csun.edu"
+        }
     });
-    OpenApiSecurityScheme jwtSecurityScheme = new() {
+
+    var jwtScheme = new OpenApiSecurityScheme
+    {
+        Name = "Authorization",
+        Type = SecuritySchemeType.Http,
         Scheme = "bearer",
         BearerFormat = "JWT",
-        Name = "JWT Authentication",
         In = ParameterLocation.Header,
-        Type = SecuritySchemeType.Http,
-        Description = "Please enter *only* JWT token",
-        Reference = new()
+        Description = "Enter JWT token only",
+        Reference = new OpenApiReference
         {
             Id = JwtBearerDefaults.AuthenticationScheme,
             Type = ReferenceType.SecurityScheme
         }
     };
-    c.AddSecurityDefinition(JwtBearerDefaults.AuthenticationScheme, jwtSecurityScheme);
-    c.AddSecurityRequirement(new()
+
+    c.AddSecurityDefinition(JwtBearerDefaults.AuthenticationScheme, jwtScheme);
+    c.AddSecurityRequirement(new OpenApiSecurityRequirement
     {
-        { jwtSecurityScheme, [] }
+        { jwtScheme, Array.Empty<string>() }
     });
 });
 
-builder.Services.AddDbContext<ShelterContext>(optionsBuilder =>
-    optionsBuilder.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection")));
+// Database
+builder.Services.AddDbContext<ShelterContext>(options =>
+    options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection"))
+);
 
+// Identity
 builder.Services.AddIdentity<ShelterUser, IdentityRole>()
-    .AddEntityFrameworkStores<ShelterContext>();
+    .AddEntityFrameworkStores<ShelterContext>()
+    .AddDefaultTokenProviders();
 
+// JWT Authentication
 builder.Services.AddAuthentication(options =>
-    {
-        options.DefaultAuthenticateScheme = JwtBearerDefaults.AuthenticationScheme;
-        options.DefaultChallengeScheme = JwtBearerDefaults.AuthenticationScheme;
-    }
-).AddJwtBearer(options =>
 {
-    options.TokenValidationParameters = new()
+    options.DefaultAuthenticateScheme = JwtBearerDefaults.AuthenticationScheme;
+    options.DefaultChallengeScheme = JwtBearerDefaults.AuthenticationScheme;
+})
+.AddJwtBearer(options =>
+{
+    options.TokenValidationParameters = new TokenValidationParameters
     {
-        RequireExpirationTime = true,
         ValidateIssuer = true,
         ValidateAudience = true,
         ValidateLifetime = true,
         ValidateIssuerSigningKey = true,
+        RequireExpirationTime = true,
 
         ValidIssuer = builder.Configuration["JwtSettings:Issuer"],
         ValidAudience = builder.Configuration["JwtSettings:Audience"],
-        IssuerSigningKey = new SymmetricSecurityKey(System.Text.Encoding.UTF8.GetBytes(
-            builder.Configuration["JwtSettings:SecurityKey"] ?? throw new InvalidOperationException()))
+        IssuerSigningKey = new SymmetricSecurityKey(
+            System.Text.Encoding.UTF8.GetBytes(
+                builder.Configuration["JwtSettings:SecurityKey"]
+                ?? throw new InvalidOperationException("JWT key missing")
+            )
+        )
     };
 });
+
+// JWT helper
 builder.Services.AddScoped<JwtHandler>();
 
-WebApplication app = builder.Build();
+// ❌ IMPORTANT: Do NOT enable ASP.NET CORS here
+// Nginx is already adding CORS headers. If you enable both, you get duplicate headers and browsers block.
+// builder.Services.AddCors(...);
 
-// Seed a default admin user if configured
-using (IServiceScope scope = app.Services.CreateScope())
+
+//
+// ======================= APP =======================
+//
+
+var app = builder.Build();
+
+// Seed admin user (optional)
+using (var scope = app.Services.CreateScope())
 {
-    UserManager<ShelterUser> userManager = scope.ServiceProvider.GetRequiredService<UserManager<ShelterUser>>();
-    IConfiguration config = scope.ServiceProvider.GetRequiredService<IConfiguration>();
-    string? adminUser = config["DefaultAdmin:UserName"];
-    string? adminEmail = config["DefaultAdmin:Email"];
-    string? adminPassword = config["DefaultAdmin:Password"];
+    var userManager = scope.ServiceProvider.GetRequiredService<UserManager<ShelterUser>>();
+    var config = scope.ServiceProvider.GetRequiredService<IConfiguration>();
 
-    if (!string.IsNullOrWhiteSpace(adminUser) && !string.IsNullOrWhiteSpace(adminPassword))
+    var username = config["DefaultAdmin:UserName"];
+    var email = config["DefaultAdmin:Email"];
+    var password = config["DefaultAdmin:Password"];
+
+    if (!string.IsNullOrWhiteSpace(username) && !string.IsNullOrWhiteSpace(password))
     {
-        ShelterUser? existing = await userManager.FindByNameAsync(adminUser);
+        var existing = await userManager.FindByNameAsync(username);
         if (existing == null)
         {
-            ShelterUser newUser = new()
+            var user = new ShelterUser
             {
-                UserName = adminUser,
-                Email = adminEmail
+                UserName = username,
+                Email = email
             };
-            await userManager.CreateAsync(newUser, adminPassword);
+            await userManager.CreateAsync(user, password);
         }
     }
 }
 
-// Configure the HTTP request pipeline.
+// Swagger ONLY in Development
 if (app.Environment.IsDevelopment())
 {
     app.UseSwagger();
     app.UseSwaggerUI();
 }
 
-app.UseCors(options => options.AllowAnyHeader().AllowAnyMethod().AllowAnyOrigin());
+// ❌ Do NOT call app.UseCors("Frontend") here either (nginx handles it)
 
-app.UseHttpsRedirection();
-
+// Auth pipeline
 app.UseAuthentication();
 app.UseAuthorization();
 

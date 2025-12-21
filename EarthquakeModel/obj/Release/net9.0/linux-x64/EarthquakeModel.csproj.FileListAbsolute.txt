@@ -1,0 +1,15 @@
+/Users/ayushthapaliya/Desktop/Comp584Server_Fall/EarthquakeModel/bin/Release/net9.0/linux-x64/EarthquakeModel.deps.json
+/Users/ayushthapaliya/Desktop/Comp584Server_Fall/EarthquakeModel/bin/Release/net9.0/linux-x64/EarthquakeModel.runtimeconfig.json
+/Users/ayushthapaliya/Desktop/Comp584Server_Fall/EarthquakeModel/bin/Release/net9.0/linux-x64/EarthquakeModel.dll
+/Users/ayushthapaliya/Desktop/Comp584Server_Fall/EarthquakeModel/bin/Release/net9.0/linux-x64/EarthquakeModel.pdb
+/Users/ayushthapaliya/Desktop/Comp584Server_Fall/EarthquakeModel/obj/Release/net9.0/linux-x64/EarthquakeModel.csproj.AssemblyReference.cache
+/Users/ayushthapaliya/Desktop/Comp584Server_Fall/EarthquakeModel/obj/Release/net9.0/linux-x64/EarthquakeModel.GeneratedMSBuildEditorConfig.editorconfig
+/Users/ayushthapaliya/Desktop/Comp584Server_Fall/EarthquakeModel/obj/Release/net9.0/linux-x64/EarthquakeModel.AssemblyInfoInputs.cache
+/Users/ayushthapaliya/Desktop/Comp584Server_Fall/EarthquakeModel/obj/Release/net9.0/linux-x64/EarthquakeModel.AssemblyInfo.cs
+/Users/ayushthapaliya/Desktop/Comp584Server_Fall/EarthquakeModel/obj/Release/net9.0/linux-x64/EarthquakeModel.csproj.CoreCompileInputs.cache
+/Users/ayushthapaliya/Desktop/Comp584Server_Fall/EarthquakeModel/obj/Release/net9.0/linux-x64/EarthquakeModel.sourcelink.json
+/Users/ayushthapaliya/Desktop/Comp584Server_Fall/EarthquakeModel/obj/Release/net9.0/linux-x64/EarthquakeModel.dll
+/Users/ayushthapaliya/Desktop/Comp584Server_Fall/EarthquakeModel/obj/Release/net9.0/linux-x64/refint/EarthquakeModel.dll
+/Users/ayushthapaliya/Desktop/Comp584Server_Fall/EarthquakeModel/obj/Release/net9.0/linux-x64/EarthquakeModel.pdb
+/Users/ayushthapaliya/Desktop/Comp584Server_Fall/EarthquakeModel/obj/Release/net9.0/linux-x64/EarthquakeModel.genruntimeconfig.cache
+/Users/ayushthapaliya/Desktop/Comp584Server_Fall/EarthquakeModel/obj/Release/net9.0/linux-x64/ref/EarthquakeModel.dll

@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("EarthquakeModel")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+6d51c3c15105aaf2319baa7d1df9b0bd580a6660")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+18c3341960442226ca18cffb1311bd91a43f191c")]
 [assembly: System.Reflection.AssemblyProductAttribute("EarthquakeModel")]
 [assembly: System.Reflection.AssemblyTitleAttribute("EarthquakeModel")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
