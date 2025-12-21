@@ -287,3 +287,4 @@
 /Users/ayushthapaliya/Desktop/Comp584Server_Fall/EarthquakeShelter.Api/obj/Release/net9.0/EarthquakeShelter.Api.pdb
 /Users/ayushthapaliya/Desktop/Comp584Server_Fall/EarthquakeShelter.Api/obj/Release/net9.0/EarthquakeShelter.Api.genruntimeconfig.cache
 /Users/ayushthapaliya/Desktop/Comp584Server_Fall/EarthquakeShelter.Api/obj/Release/net9.0/ref/EarthquakeShelter.Api.dll
+/Users/ayushthapaliya/Desktop/Comp584Server_Fall/EarthquakeShelter.Api/bin/Release/net9.0/Data/earthquake_locations.csv

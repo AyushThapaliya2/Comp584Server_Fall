@@ -12,7 +12,7 @@ namespace EarthquakeShelter.Api.Controllers;
 
 [Route("api/[controller]")]
 [ApiController]
-[Authorize]
+[AllowAnonymous]
 public class SeedController(ShelterContext context, IHostEnvironment environment) : ControllerBase
 {
     private readonly string pathName = Path.Combine(environment.ContentRootPath, "Data", "earthquake_locations.csv");

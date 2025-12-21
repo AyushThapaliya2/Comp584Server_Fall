@@ -26,6 +26,7 @@ public class SheltersController : ControllerBase
     }
 
     // GET: api/Shelters/nearby?lat=...&lng=...&take=3
+    [AllowAnonymous]
     [HttpGet("nearby")]
     public async Task<ActionResult<IEnumerable<ShelterDistanceDto>>> GetNearbyShelters([FromQuery] decimal lat, [FromQuery] decimal lng, [FromQuery] int take = 3)
     {

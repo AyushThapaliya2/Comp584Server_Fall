@@ -1,3 +1,4 @@
+/Users/ayushthapaliya/Desktop/Comp584Server_Fall/publish/Data/earthquake_locations.csv
 /Users/ayushthapaliya/Desktop/Comp584Server_Fall/publish/EarthquakeShelter.Api
 /Users/ayushthapaliya/Desktop/Comp584Server_Fall/publish/appsettings.Development.json
 /Users/ayushthapaliya/Desktop/Comp584Server_Fall/publish/appsettings.json
